@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.springframework.cloud.stream.app</groupId>
+    <artifactId>twitter-labs-app-dependencies</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>twitter-labs-app-dependencies</name>
+    <description>Spring Cloud Stream Twitter Labs App Dependencies</description>
+
+    <parent>
+        <artifactId>spring-cloud-dependencies-parent</artifactId>
+        <groupId>org.springframework.cloud</groupId>
+        <version>2.3.0.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
+        <spring-security.version>5.3.3.RELEASE</spring-security.version>
+        <twitter-labs-reactive.version>0.0.10</twitter-labs-reactive.version>
+        <spring-cloud-stream.version>3.0.6.RELEASE</spring-cloud-stream.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-client</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rj93.twitter</groupId>
+                <artifactId>twitter-labs-reactive-core</artifactId>
+                <version>${twitter-labs-reactive.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rj93.twitter</groupId>
+                <artifactId>twitter-labs-reactive-autoconfigure</artifactId>
+                <version>${twitter-labs-reactive.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud.stream.app</groupId>
+                <artifactId>spring-cloud-starter-stream-source-twitter-labs</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-stream-test-support</artifactId>
+                <version>${spring-cloud-stream.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

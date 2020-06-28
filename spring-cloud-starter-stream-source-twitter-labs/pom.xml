@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>twitter-labs-app-starters-build</artifactId>
+        <groupId>org.springframework.cloud.stream.app</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>spring-cloud-starter-stream-source-twitter-labs</artifactId>
+    <name>spring-cloud-starter-stream-source-twitter-labs</name>
+    <description>Spring Cloud Stream twitter-labs-source core</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.rj93.twitter</groupId>
+            <artifactId>twitter-labs-reactive-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.rj93.twitter</groupId>
+            <artifactId>twitter-labs-reactive-autoconfigure</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-app-starter-doc-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.cloud.stream.app.plugin</groupId>
+                <artifactId>spring-cloud-stream-app-maven-plugin</artifactId>
+                <configuration>
+                    <containerImage>
+                        <orgName>rj93</orgName>
+                    </containerImage>
+                    <generatedProjectHome>${session.executionRootDirectory}/apps</generatedProjectHome>
+                    <generatedProjectVersion>${project.version}</generatedProjectVersion>
+                    <bom>
+                        <name>scs-bom</name>
+                        <groupId>org.springframework.cloud.stream.app</groupId>
+                        <artifactId>twitter-labs-app-dependencies</artifactId>
+                        <version>${project.version}</version>
+                    </bom>
+                    <generatedApps>
+                        <twitter-labs-source>
+                            <autoConfigClass>com.rj93.twitter.source.TwitterStreamSourceConfiguration.class</autoConfigClass>
+                        </twitter-labs-source>
+                    </generatedApps>
+                    <enableContainerImageMetadata>true</enableContainerImageMetadata>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
