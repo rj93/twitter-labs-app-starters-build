@@ -18,7 +18,7 @@
 
     <properties>
         <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
-        <spring-security.version>5.3.3.RELEASE</spring-security.version>
+        <spring-security.version>5.3.10.RELEASE</spring-security.version>
         <twitter-labs-reactive.version>0.0.10</twitter-labs-reactive.version>
         <spring-cloud-stream.version>3.0.6.RELEASE</spring-cloud-stream.version>
     </properties>
